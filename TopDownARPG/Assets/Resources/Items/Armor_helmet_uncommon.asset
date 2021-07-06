@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16a4e1599d8794469f7cdb5c59eb45c, type: 3}
+  m_Name: Armor_helmet_uncommon
+  m_EditorClassIdentifier: 
+  m_itmName: Helmet (uncommon)
+  m_itmIcon: {fileID: 21300000, guid: bbd10b6d2453c2b418acb4c0c557fcd4, type: 3}
+  m_equipSlot: 0
+  m_model: {fileID: 0}
+  m_armor: 3

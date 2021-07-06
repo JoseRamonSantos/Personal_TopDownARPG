@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2e5f095bba50244ac1780e47810608, type: 3}
+  m_Name: Weapon_sword_rare
+  m_EditorClassIdentifier: 
+  m_itmName: Sword (rare)
+  m_itmIcon: {fileID: 21300000, guid: 64fec5a77fc61dc4da734d92fbac99bc, type: 3}
+  m_equipSlot: 4
+  m_model: {fileID: 919132149155446097, guid: 61f0206197d931a4aaad5c17f478dd3e, type: 3}
+  m_statsMod:
+    m_damage: 35
+    m_acc: 15
+    m_critProb: 10
+    m_critDamageMult: 0
+  m_attackDistance: 3.5

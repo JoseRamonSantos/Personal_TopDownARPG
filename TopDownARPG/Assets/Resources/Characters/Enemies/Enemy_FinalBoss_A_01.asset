@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd07eba2456b454db099bdb09d7ab1f, type: 3}
+  m_Name: Enemy_FinalBoss_A_01
+  m_EditorClassIdentifier: 
+  m_name: Enemy_FinalBoss_A_01
+  m_icon: {fileID: 0}
+  m_maxHp: 175
+  m_armor: 30
+  m_attackDistance: 3
+  m_attackStatsBase:
+    m_damage: 15
+    m_acc: 80
+    m_critProb: 10
+    m_critDamageMult: 200
+  m_lootData:
+  - m_itemData:
+    - {fileID: 11400000, guid: 4035e769c1047cb49890cf82f1f43cec, type: 2}
+    - {fileID: 11400000, guid: 1e9a08e57b43b2042a92b4ffc2ac0867, type: 2}
+    - {fileID: 11400000, guid: 972a73a2e5f20f442aa83855365d8b60, type: 2}
+    m_unique: 1
+    m_probability: 75
+  - m_itemData:
+    - {fileID: 11400000, guid: 84e70eabee19380438db006e4f3b107c, type: 2}
+    - {fileID: 11400000, guid: de707c0446aea3341ac57475c3e7e3a7, type: 2}
+    - {fileID: 11400000, guid: e101cd13176bc79439c91cf5d4cfa5ba, type: 2}
+    - {fileID: 11400000, guid: 9276eec91ad20e04990f58c7031d2375, type: 2}
+    m_unique: 1
+    m_probability: 85
+  - m_itemData:
+    - {fileID: 11400000, guid: 2b97d5ea2cbb5fb40b00f1fcb411a910, type: 2}
+    - {fileID: 11400000, guid: 2b97d5ea2cbb5fb40b00f1fcb411a910, type: 2}
+    m_unique: 0
+    m_probability: 100
+  m_type: 1
+  m_tier: 0
+  m_enemyPrefab: {fileID: 3024766335117891318, guid: cee4f1b8d27cb0b4f83a2d77cb99079e,
+    type: 3}

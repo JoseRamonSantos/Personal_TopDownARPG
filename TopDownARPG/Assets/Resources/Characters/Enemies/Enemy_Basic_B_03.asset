@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd07eba2456b454db099bdb09d7ab1f, type: 3}
+  m_Name: Enemy_Basic_B_03
+  m_EditorClassIdentifier: 
+  m_name: Enemy_Basic_B_03
+  m_icon: {fileID: 0}
+  m_maxHp: 55
+  m_armor: 15
+  m_attackDistance: 3.2
+  m_attackStatsBase:
+    m_damage: 10
+    m_acc: 90
+    m_critProb: 20
+    m_critDamageMult: 150
+  m_lootData:
+  - m_itemData:
+    - {fileID: 11400000, guid: abb693e5af538404ca318cca130f4429, type: 2}
+    - {fileID: 11400000, guid: 831facfbe05fa5c4188a924ecd224f05, type: 2}
+    - {fileID: 11400000, guid: 2ab95e58b6ebd404f8a391799de5cc07, type: 2}
+    m_unique: 1
+    m_probability: 25
+  - m_itemData:
+    - {fileID: 11400000, guid: 2b97d5ea2cbb5fb40b00f1fcb411a910, type: 2}
+    - {fileID: 11400000, guid: 2b97d5ea2cbb5fb40b00f1fcb411a910, type: 2}
+    m_unique: 0
+    m_probability: 50
+  - m_itemData:
+    - {fileID: 11400000, guid: 587da7d6b3ab0714db6be66817887ca4, type: 2}
+    - {fileID: 11400000, guid: 77d8fab336c29b84fa870e88013179d6, type: 2}
+    - {fileID: 11400000, guid: 3804b1fe8f302014ea38d7ae1db63b0c, type: 2}
+    - {fileID: 11400000, guid: 6a92f2eaff407d44795541a7c6874859, type: 2}
+    m_unique: 1
+    m_probability: 90
+  - m_itemData:
+    - {fileID: 11400000, guid: 2b97d5ea2cbb5fb40b00f1fcb411a910, type: 2}
+    m_unique: 0
+    m_probability: 85
+  m_type: 0
+  m_tier: 1
+  m_enemyPrefab: {fileID: 3024766335117891318, guid: 04565875fff294e4287d077762f83913,
+    type: 3}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2e5f095bba50244ac1780e47810608, type: 3}
+  m_Name: Weapon_axe_uncommon
+  m_EditorClassIdentifier: 
+  m_itmName: Axe (uncommon)
+  m_itmIcon: {fileID: 21300000, guid: 6493ddb231a50f047824c166315d7d2f, type: 3}
+  m_equipSlot: 4
+  m_model: {fileID: 919132149155446097, guid: f6228453d6fc5184da0ac6500e5928c1, type: 3}
+  m_statsMod:
+    m_damage: 30
+    m_acc: 10
+    m_critProb: 6
+    m_critDamageMult: 25
+  m_attackDistance: 2.9

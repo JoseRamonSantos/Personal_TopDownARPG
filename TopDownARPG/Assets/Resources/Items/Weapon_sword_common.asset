@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2e5f095bba50244ac1780e47810608, type: 3}
+  m_Name: Weapon_sword_common
+  m_EditorClassIdentifier: 
+  m_itmName: Sword (common)
+  m_itmIcon: {fileID: 21300000, guid: eef6c0833ae61be48bd38023e041e426, type: 3}
+  m_equipSlot: 4
+  m_model: {fileID: 919132149155446097, guid: 80a23461260324a4c9ea7f3dee1b4082, type: 3}
+  m_statsMod:
+    m_damage: 15
+    m_acc: 15
+    m_critProb: 6
+    m_critDamageMult: 0
+  m_attackDistance: 3

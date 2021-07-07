@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2979262756371741025}
   - component: {fileID: 5273076306914614141}
   - component: {fileID: 8765011299028820146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scaffold_high_cornerBoth
   m_TagString: Untagged
   m_Icon: {fileID: 0}

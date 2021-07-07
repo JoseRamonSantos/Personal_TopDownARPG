@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 1120946371489621410}
   - component: {fileID: 2912300091328303464}
   - component: {fileID: 5125901762816456947}
-  m_Layer: 0
-  m_Name: tileBrickB_small (1)
+  m_Layer: 10
+  m_Name: tileBrickB_small_Wood_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,6 +175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_woodLeft (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7b258e2f732ada48884f82188b8ca63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c7b258e2f732ada48884f82188b8ca63,
         type: 3}

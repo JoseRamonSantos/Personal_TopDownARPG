@@ -13,19 +13,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.099999964, z: 2}
   m_Center: {x: 0, y: 0.049999982, z: 0}
---- !u!65 &8817959650338748109
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4463629251640719465}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0.099999964, z: 2}
-  m_Center: {x: 0, y: 0.049999982, z: 0}
 --- !u!65 &4417623287695165635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33,6 +20,19 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4260508036198676669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.099999964, z: 2}
+  m_Center: {x: 0, y: 0.049999982, z: 0}
+--- !u!65 &8817959650338748109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463629251640719465}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 5912393168202513258}
   - component: {fileID: 8496600395852337056}
   - component: {fileID: 6782639703125662209}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tileBrickB_medium_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: floorDecoration_wood (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa, type: 3}
 --- !u!1 &120496750168287334 stripped
@@ -298,6 +303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_wood (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa, type: 3}
@@ -380,6 +390,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: floorDecoration_wood (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa, type: 3}
 --- !u!1 &4260508036198676669 stripped
@@ -460,6 +475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa, type: 3}

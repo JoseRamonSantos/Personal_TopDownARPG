@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375336907555024491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 716276433166498718}
   - component: {fileID: 5573281501884690115}
   - component: {fileID: 2500487997172280634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: character_knightArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7094646713953691976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KayKit Animated Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3952560629131063710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lHand_ShieldSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4378891686750186797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 1142239057632436314}
   - component: {fileID: 2900031286625358992}
   - component: {fileID: 3692396884032058692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: character_knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 648206429260288860}
   - component: {fileID: 7854898673220432178}
   - component: {fileID: 3108545053153881775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: character_knightHelmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2594180508781657829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 5096066917435277184}
   - component: {fileID: 9022101731640188439}
   - component: {fileID: 456110282637485317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: character_knightHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2780419430064982946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rHand_SwordSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1283101333498442790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040634791885365501}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 6040634792694463742}
   - component: {fileID: 8452899186169771600}
   - component: {fileID: 6089846775523376338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed199b8637d5e9a44ad3a8d40ae86103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cmpFreeLokCam: {fileID: 0}
+  m_mouseLM:
+    serializedVersion: 2
+    m_Bits: 0
   m_crntMode: 0
   m_lastHover: {fileID: 0}
   m_crntHover: {fileID: 0}
@@ -806,7 +808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5008938990858233125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitInfoPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +840,7 @@ GameObject:
   - component: {fileID: 5816165773184977285}
   - component: {fileID: 1382775315736527394}
   - component: {fileID: 4078556286360283987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: character_knightHelmetVisor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,7 +920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1125995104580789072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +954,7 @@ GameObject:
   - component: {fileID: 4386022485856606698}
   - component: {fileID: 3367393016694702516}
   - component: {fileID: 1349104597905524267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: character_knightArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}

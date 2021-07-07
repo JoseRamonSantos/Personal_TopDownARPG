@@ -20,11 +20,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Canvas m_canvas = null;
     [SerializeField]
-    private GameObject m_basicHit = null;
+    private GameObject m_basicHitInfo = null;
     [SerializeField]
-    private GameObject m_criticalHit = null;
+    private GameObject m_criticalHitInfo = null;
     [SerializeField]
-    private GameObject m_missHit = null;
+    private GameObject m_missHitInfo = null;
+    [SerializeField]
+    private GameObject m_healInfo = null;
 
     [Space]
 
@@ -79,7 +81,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(_name + " has dropped " + _itmData);
     }
 
-
+    //Hit & Heal Info
     public void SpawnHitInfo(Vector3 _pos, int _damage, E_HIT_TYPE _type)
     {
         GameObject hitInfo = null;
@@ -87,13 +89,13 @@ public class GameManager : MonoBehaviour
         switch (_type)
         {
             case E_HIT_TYPE.BASIC:
-                hitInfo = m_basicHit;
+                hitInfo = m_basicHitInfo;
                 break;
             case E_HIT_TYPE.CRITICAL:
-                hitInfo = m_criticalHit;
+                hitInfo = m_criticalHitInfo;
                 break;
             case E_HIT_TYPE.MISS:
-                hitInfo = m_missHit;
+                hitInfo = m_missHitInfo;
                 break;
         }
 
@@ -112,6 +114,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SpawnHealInfo(Vector3 _pos, int _amount)
+    {
+        Vector3 pos = Camera.main.WorldToScreenPoint(_pos);
+
+        GameObject hitInfo = Instantiate(m_healInfo, pos, Quaternion.identity, m_canvas.transform);
+        
+        hitInfo.GetComponent<TextMeshProUGUI>().text = _amount.ToString();
+    }
 
     //SPAWN POINTS
     public void AddSpawnPoint(SpawnPoint _sp)

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5214868148494406700}
   - component: {fileID: 5630321373738280460}
   - component: {fileID: 6008914708919597347}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scaffold_high_railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}

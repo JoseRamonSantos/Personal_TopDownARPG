@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 3327606729634821541}
   - component: {fileID: 705657738059170159}
   - component: {fileID: 3510735210494790797}
-  m_Layer: 0
-  m_Name: tileBrickB_large (1)
+  m_Layer: 10
+  m_Name: tileBrickB_large_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,6 +290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -373,6 +378,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_wood (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}
@@ -462,6 +472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -545,6 +560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_wood (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}
@@ -634,6 +654,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -717,6 +742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_wood (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}
@@ -806,6 +836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -892,6 +927,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -975,6 +1015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_wood (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
         type: 3}

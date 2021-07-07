@@ -43,12 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde2adec7b4a1ba49bd92ee10397780b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_winPanelCanvas: {fileID: 0}
+  m_losePanelCanvas: {fileID: 0}
+  m_loseWavesText: {fileID: 0}
   m_canvas: {fileID: 0}
-  m_basicHit: {fileID: 7596554883898964500, guid: 60fc9c1619da5ea44956b3da49eb5a70,
+  m_basicHitInfo: {fileID: 7596554883898964500, guid: 60fc9c1619da5ea44956b3da49eb5a70,
     type: 3}
-  m_criticalHit: {fileID: 5006940677287303181, guid: e972807da2bc32947b843b793ddd07bc,
+  m_criticalHitInfo: {fileID: 5349145991469060541, guid: 136548981304e26448e9456d23577ad9,
     type: 3}
-  m_missHit: {fileID: 5006940677287303181, guid: e972807da2bc32947b843b793ddd07bc,
+  m_missHitInfo: {fileID: 5006940677287303181, guid: e972807da2bc32947b843b793ddd07bc,
+    type: 3}
+  m_healInfo: {fileID: 7596554883898964500, guid: a62163ec0a5b47245b3a8335eb3a51d3,
     type: 3}
   m_lootPrefab: {fileID: 5122192810674915057, guid: a7b3382ead281c04aa4c7f6ac3ad7db1,
     type: 3}
+  m_spawnPointsList: []

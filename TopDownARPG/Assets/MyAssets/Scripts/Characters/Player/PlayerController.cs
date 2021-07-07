@@ -13,8 +13,10 @@ public class PlayerController : MonoBehaviour
     private NavMeshAgent m_cmpAgent = null;
     private CharMovement m_cmpMovement = null;
     private CharAttack m_cmpAttack = null;
-    [SerializeField]
     private CinemachineFreeLook m_cmpFreeLokCam = null;
+
+    [SerializeField]
+    private LayerMask m_mouseLM;
 
     [SerializeField]
     private E_CURSOR_MODE m_crntMode = E_CURSOR_MODE.DEFAULT;
@@ -53,8 +55,8 @@ public class PlayerController : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        //CURSOR MODE
-        if (Physics.Raycast(ray.origin, ray.direction * 10, out rHit) && !EventSystem.current.IsPointerOverGameObject())
+        //CURSOR MODE (Lo del event system es para que no funcione cuando se tiene el cursor sobre un elemento de la UI)
+        if (Physics.Raycast(ray.origin, ray.direction * 10, out rHit, float.MaxValue, m_mouseLM) && !EventSystem.current.IsPointerOverGameObject())
         {
             if (NavMesh.SamplePosition(rHit.point, out nVHit, 0.5f, m_cmpAgent.areaMask)) { }
 
@@ -163,27 +165,27 @@ public class PlayerController : MonoBehaviour
             DisenableCameraMovement();
         }
 
-        /*if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            TakeDamage(15, E_HIT_TYPE.BASIC);
+            m_cmpPlayer.TakeDamage(15, E_HIT_TYPE.BASIC);
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Heal(10);
+            m_cmpPlayer.Heal(10);
         }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
             E_HIT_TYPE hitType;
 
-            Debug.Log("Damage: " + CalculateDamage(out hitType));
+            Debug.Log("Damage: " + m_cmpPlayer.CalculateDamage(out hitType));
         }
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Die();
-        }*/
+            m_cmpPlayer.Die();
+        }
     }
 
     private void EnableCameraMovement()

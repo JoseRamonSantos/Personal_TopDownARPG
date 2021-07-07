@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5122192810674915060}
   - component: {fileID: 5122192810674915063}
   - component: {fileID: 5122192810674915062}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LootItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c494f1437ae269d45bf14d44c1299260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lootData: {fileID: 11400000, guid: abb693e5af538404ca318cca130f4429, type: 2}
+  m_lootData: {fileID: 0}
 --- !u!1 &5122192812097052673
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 5122192812097052678}
   - component: {fileID: 5122192812097052676}
   - component: {fileID: 5122192812097052679}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8613430067915248544}
   - component: {fileID: 4859914062216092648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

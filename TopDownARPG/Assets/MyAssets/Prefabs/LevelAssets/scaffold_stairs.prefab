@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708471163312789692}
   - component: {fileID: 1708471163312789683}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708471163548923926}
   - component: {fileID: 1708471163548923925}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708471164738682989}
   - component: {fileID: 1708471164738682988}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708471164929155496}
   - component: {fileID: 1708471164929155503}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1170667647592075953}
   - component: {fileID: 2851015580332039444}
   - component: {fileID: 32687214900767198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scaffold_stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}

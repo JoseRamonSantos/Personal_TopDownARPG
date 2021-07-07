@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 7804347586519095855}
   - component: {fileID: 5452288557390835429}
   - component: {fileID: 3493435173010251889}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tileBrickB_large_FloorDecoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,6 +175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_tilesLarge
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be6517cfd114bc74fa6c146418a554f4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be6517cfd114bc74fa6c146418a554f4, type: 3}

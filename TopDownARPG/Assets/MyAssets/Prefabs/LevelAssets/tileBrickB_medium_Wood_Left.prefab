@@ -38,8 +38,8 @@ GameObject:
   - component: {fileID: 2286969746534425613}
   - component: {fileID: 4060001214202319047}
   - component: {fileID: 2156584677207778752}
-  m_Layer: 0
-  m_Name: tileBrickB_medium 1
+  m_Layer: 10
+  m_Name: tileBrickB_medium_Wood_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: floorDecoration_wood (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa, type: 3}
 --- !u!1 &617592973867653187 stripped
@@ -298,6 +303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_woodLeft (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7b258e2f732ada48884f82188b8ca63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7b258e2f732ada48884f82188b8ca63, type: 3}
@@ -380,6 +390,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: floorDecoration_woodLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7b258e2f732ada48884f82188b8ca63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7b258e2f732ada48884f82188b8ca63, type: 3}
 --- !u!1 &2987199144296311269 stripped
@@ -460,6 +475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floorDecoration_wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c81f86b8b32e9d4abf6108b7f02a9fa, type: 3}

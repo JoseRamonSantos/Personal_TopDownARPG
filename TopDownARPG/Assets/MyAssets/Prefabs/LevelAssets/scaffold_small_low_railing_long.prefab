@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7261555737930832166}
   - component: {fileID: 5738038468410758797}
   - component: {fileID: 8035326259991760623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scaffold_small_low_railing_long
   m_TagString: Untagged
   m_Icon: {fileID: 0}

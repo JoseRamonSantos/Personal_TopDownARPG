@@ -110,7 +110,9 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
 
             if (criticalHit)
             {
+                Debug.Log("----------------------------");
                 Debug.Log(transform.name + " - critical hit");
+                Debug.Log("----------------------------");
                 damage = Mathf.RoundToInt(damage * AttackStatsTotal.m_critDamageMult * 0.01f);
                 _hitType = E_HIT_TYPE.CRITICAL;
             }
@@ -153,6 +155,8 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     public virtual void Heal(int _amount)
     {
         _amount = Mathf.Clamp(_amount, 0, int.MaxValue);
+
+        GameManager.Instance.SpawnHealInfo(transform.position, _amount);
 
         Debug.Log(transform.name + ": " + _amount + " HP restored");
         CrntHp += _amount;

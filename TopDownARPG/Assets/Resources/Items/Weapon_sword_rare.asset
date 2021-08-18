@@ -19,6 +19,6 @@ MonoBehaviour:
   m_statsMod:
     m_damage: 35
     m_acc: 15
-    m_critProb: 10
-    m_critDamageMult: 0
+    m_critProb: 18
+    m_critDamageMult: 150
   m_attackDistance: 3.5

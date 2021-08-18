@@ -196,7 +196,7 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
                 m_attackStatsTotal.m_damage += itmWeapon.StatsMod.m_damage;
                 m_attackStatsTotal.m_acc += itmWeapon.StatsMod.m_acc;
                 m_attackStatsTotal.m_critProb += itmWeapon.StatsMod.m_critProb;
-                m_attackStatsTotal.m_critDamageMult += itmWeapon.StatsMod.m_critDamageMult;
+                m_attackStatsTotal.m_critDamageMult = itmWeapon.StatsMod.m_critDamageMult;
                 m_attackDistance = itmWeapon.AttackDistance;
             }
             else if (crntItem is Item_Armor)

@@ -7,6 +7,9 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance = null;
 
+    public delegate void StatsHandler(int _crntHpPotions);
+    public event StatsHandler OnUpdateHpPotions;
+
     [SerializeField]
     private E_DISPLAY_FILTER m_displayFilter = E_DISPLAY_FILTER.ALL;
 
@@ -68,12 +71,23 @@ public class Inventory : MonoBehaviour
     {
         m_inventory.Add(_item);
         UpdateDisplayedItems();
+
+        if (_item is Item_Consumable)
+        {
+            OnUpdateHpPotions?.Invoke(GetCrntHpPotions());
+        }
     }
 
     public void RemoveItem(Item_Base _item)
     {
+
         m_inventory.Remove(_item);
         UpdateDisplayedItems();
+        
+        if (_item is Item_Consumable)
+        {
+            OnUpdateHpPotions?.Invoke(GetCrntHpPotions());
+        }
     }
 
     public void ShowItem(Item_Base _item)
@@ -156,5 +170,21 @@ public class Inventory : MonoBehaviour
         }
 
         m_displayedItems.Clear();
+    }
+
+    public int GetCrntHpPotions()
+    {
+        int x = 0;
+
+        for (int i = 0; i < m_inventory.Count; i++)
+        {
+            if(m_inventory[i] is Item_Consumable)
+            {
+                x++;
+            }
+        }
+
+        Debug.Log("CRNT POTIONS: " + x);
+        return x;
     }
 }

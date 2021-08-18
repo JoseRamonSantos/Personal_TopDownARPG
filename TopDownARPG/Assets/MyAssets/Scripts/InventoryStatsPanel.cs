@@ -30,10 +30,10 @@ public class InventoryStatsPanel : MonoBehaviour
     private void OnUpdateStats(SAttackStats _aStats, int _armor)
     {
         m_damageText.text = _aStats.m_damage.ToString();
-        m_accText.text = _aStats.m_acc.ToString();
-        m_cProbText.text = _aStats.m_critProb.ToString();
-        m_cMultText.text = _aStats.m_critDamageMult.ToString();
         m_armorText.text = _armor.ToString();
+        m_accText.text = _aStats.m_acc.ToString() + "%";
+        m_cProbText.text = _aStats.m_critProb.ToString() + "%";
+        m_cMultText.text = _aStats.m_critDamageMult.ToString() + "%";
     }
 
 }

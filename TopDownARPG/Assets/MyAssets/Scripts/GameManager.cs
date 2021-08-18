@@ -99,10 +99,14 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        Vector3 hitPos = Camera.main.WorldToScreenPoint(_pos);
 
+        Vector3 infoPos = Camera.main.WorldToScreenPoint(_pos);
+        
+        float rndDelta = Random.Range(-10.0f, 10.0f);
 
-        GameObject hitinfo = Instantiate(hitInfo, hitPos, Quaternion.identity, m_canvas.transform);
+        infoPos.x += rndDelta;
+
+        GameObject hitinfo = Instantiate(hitInfo, infoPos, Quaternion.identity, m_canvas.transform);
 
         if (_type != E_HIT_TYPE.MISS)
         {
@@ -116,9 +120,14 @@ public class GameManager : MonoBehaviour
 
     public void SpawnHealInfo(Vector3 _pos, int _amount)
     {
-        Vector3 pos = Camera.main.WorldToScreenPoint(_pos);
 
-        GameObject hitInfo = Instantiate(m_healInfo, pos, Quaternion.identity, m_canvas.transform);
+        Vector3 infoPos = Camera.main.WorldToScreenPoint(_pos);
+        
+        float rndDelta = Random.Range(-10.0f, 10.0f);
+
+        infoPos.x += rndDelta;
+
+        GameObject hitInfo = Instantiate(m_healInfo, infoPos, Quaternion.identity, m_canvas.transform);
         
         hitInfo.GetComponent<TextMeshProUGUI>().text = _amount.ToString();
     }

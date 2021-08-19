@@ -22,7 +22,6 @@ public class PlayerCrntHpPotions : MonoBehaviour
 
     private void OnUpdateCrntHpPotions(int _crntHpPotions)
     {
-        Debug.Log("ON UPDATE CRNT POTIONS");
         m_txtCrntHpPotions.text = _crntHpPotions.ToString();
     }
 }

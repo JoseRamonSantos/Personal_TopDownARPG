@@ -184,7 +184,6 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        Debug.Log("CRNT POTIONS: " + x);
         return x;
     }
 }

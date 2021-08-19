@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3177467912327122480, guid: 58d137e0cc4dd16429f52232cd180e05,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_A_01
+      value: Enemy_Basic_A_01
       objectReference: {fileID: 0}
     - target: {fileID: 3177467912327122482, guid: 58d137e0cc4dd16429f52232cd180e05,
         type: 3}
@@ -180,6 +180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: knightHeadA
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 43134caae0f78d747a1b27f60059be1d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43134caae0f78d747a1b27f60059be1d, type: 3}
 --- !u!1001 &4609184597900465396
@@ -248,6 +253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: shield_uncommon
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4dce83f38e31dae47877faca794cb85f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dce83f38e31dae47877faca794cb85f, type: 3}
@@ -332,6 +342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: axeDouble_uncommon
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d865687a86b4efa43879c4217fcf36a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d865687a86b4efa43879c4217fcf36a3, type: 3}

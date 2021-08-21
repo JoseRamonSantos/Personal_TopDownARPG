@@ -36,7 +36,6 @@ public class WavesManager : MonoBehaviour
     private float m_crntIWT = 0;
     [SerializeField]
     private float m_nextRoundWaitTime = 5;
-    private float m_crntNRWT = 0;
 
     [SerializeField]
     private SWavesInfo[] m_wavesInfo;

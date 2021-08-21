@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent (typeof(TextMeshProUGUI))]
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class PlayerCrntHpPotions : MonoBehaviour
 {
+    #region VARIABLES
     private TextMeshProUGUI m_txtCrntHpPotions;
+    #endregion
 
 
+    #region METHODS
     private void Awake()
     {
         m_txtCrntHpPotions = GetComponentInChildren<TextMeshProUGUI>();
@@ -24,4 +27,5 @@ public class PlayerCrntHpPotions : MonoBehaviour
     {
         m_txtCrntHpPotions.text = _crntHpPotions.ToString();
     }
+    #endregion
 }

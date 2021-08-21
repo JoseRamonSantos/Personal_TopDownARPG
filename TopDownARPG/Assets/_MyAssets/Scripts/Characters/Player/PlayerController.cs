@@ -177,9 +177,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            E_HIT_TYPE hitType;
-
-            Debug.Log("Damage: " + m_cmpPlayer.CalculateDamage(out hitType));
+            m_cmpPlayer.DoDamage(null);
         }
 
         if (Input.GetKeyDown(KeyCode.L))

@@ -4,24 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[System.Serializable]
-public struct SAttackStats
-{
-    public int m_damage;
-    public float m_acc;
-    public float m_critProb;
-    public float m_critDamageMult;
-}
-
-
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(CharAttack))]
 public abstract class Char_Base : MonoBehaviour, IDisplayInfo
 {
+    #region VARIABLES
     public event EventHandler<HpArgs> OnHpChange;
 
     public delegate void StatsHandler(SAttackStats _aStats, int _armor);
     public event StatsHandler OnStatsChange;
+
+    public delegate SAttackStats AttackStatsHandler();
+    public event AttackStatsHandler OnAttackStats;
 
     protected CharAttack m_cmpAttack = null;
 
@@ -49,8 +43,9 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
 
     [SerializeField]
     private List<Item_Equipable> m_equipedItemsList = new List<Item_Equipable>();
+    #endregion
 
-
+    #region PROPERTIES
     public Transform HitInfoDisplay { get => m_hitInfoDisplay; }
     public int MaxHp { get => m_maxHp; }
     public int CrntHp
@@ -71,11 +66,14 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     public int ArmorTotal { get => m_armorTotal; set => m_armorTotal = Mathf.Clamp(value, 0, 100); }
 
     public float AttackDistance { get => m_attackDistance; }
+    #endregion
 
 
+    #region METHODS
     protected virtual void Awake()
     {
         m_cmpAttack = GetComponent<CharAttack>();
+        OnAttackStats += BasicAttack;
     }
 
     protected virtual void Start()
@@ -92,39 +90,76 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     }
 
     //DAMAGE
-    public virtual int CalculateDamage(out E_HIT_TYPE _hitType)
+    public virtual void DoDamage(Char_Base _target)
     {
+        E_HIT_TYPE hitType;
+        int damage = CalculateDamage(out hitType, OnAttackStats.Invoke());
+
+        if (_target)
+        {
+            _target.TakeDamage(damage, hitType);
+        }
+
+        Debug.Log("-->" + transform.name + " deals " + damage + " damage " + "<---");
+    }
+    /*public virtual void DoDamage(Char_Base _target, SAttackStats _attackStats)
+    {
+        E_HIT_TYPE hitType;
+        int damage = CalculateDamage(out hitType, _attackStats);
+
+        if (_target)
+        {
+            _target.TakeDamage(damage, hitType);
+        }
+
+        Debug.Log("-->" + transform.name + " deals " + damage + " damage " + "<---");
+    }*/
+
+    public virtual int CalculateDamage(out E_HIT_TYPE _hitType, SAttackStats _attackStats)
+    {
+        int damage = _attackStats.m_damage;
+
         float rndAcc = Random.value;
-        bool missHit = rndAcc > AttackStatsTotal.m_acc * 0.01f;
+        float acc = _attackStats.m_acc * 0.01f;
 
-        int damage = 0;
+        float rndCriticalProb = Random.value;
+        float criticalProb = _attackStats.m_critProb * 0.01f;
 
-        if (!missHit)
+        float criticalMultiplier = _attackStats.m_critDamageMult;
+        
+        /*Debug.Log("----------------------CALCULATE DAMAGE---------------------------");
+        Debug.Log("-> BASE DAMAGE= " + damage);
+        Debug.Log("-> ACC= " + acc + " / rnd= " + rndAcc);
+        Debug.Log("-> CRITICAL PROB = " + criticalProb + " / rnd = " + rndCriticalProb);
+        Debug.Log("-> CRITICAL MULTIPLPIER = " + criticalMultiplier);
+        Debug.Log("-----------------------------------------------------------------");*/
+
+        if (rndAcc <= acc)
         {
             _hitType = E_HIT_TYPE.BASIC;
 
-            damage = m_attackStatsTotal.m_damage;
-
-            float rndCrit = Random.value;
-            bool criticalHit = rndCrit <= AttackStatsTotal.m_critProb * 0.01f;
-
-            if (criticalHit)
+            if (rndCriticalProb <= criticalProb)
             {
-                Debug.Log("----------------------------");
-                Debug.Log(transform.name + " - critical hit");
-                Debug.Log("----------------------------");
-                damage = Mathf.RoundToInt(damage * AttackStatsTotal.m_critDamageMult * 0.01f);
+                Debug.Log(transform.name + " - critical hit ----------");
                 _hitType = E_HIT_TYPE.CRITICAL;
-            }
 
-            return damage;
+                damage = Mathf.RoundToInt(damage * criticalMultiplier * 0.01f);
+            }
         }
         else
         {
-            Debug.Log(transform.name + " - miss hit");
+            Debug.Log(transform.name + " - miss hit -----");
             _hitType = E_HIT_TYPE.MISS;
-            return damage;
+
+            damage = 0;
         }
+
+        return damage;
+    }
+
+    private SAttackStats BasicAttack()
+    {
+        return m_attackStatsTotal;
     }
 
     //HP
@@ -220,4 +255,5 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     {
 
     }
+    #endregion
 }

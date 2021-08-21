@@ -7,9 +7,10 @@ using UnityEngine;
 [RequireComponent(typeof(Char_Base))]
 public class CharAttack : MonoBehaviour
 {
+    #region VARIABLES
     private CharMovement m_cmpMovement = null;
     private Animator m_cmpAnimator = null;
-    private Char_Base m_charOwner = null;
+    private Char_Base m_char = null;
 
     [SerializeField]
     protected Char_Base m_target = null;
@@ -19,12 +20,19 @@ public class CharAttack : MonoBehaviour
     [SerializeField]
     private bool m_isAttacking = false;
 
+    #endregion
 
+    #region PROPERTIES
+    public bool IsAttacking { get => m_isAttacking; }
+    public Char_Base Target { get => m_target; }
+    #endregion
+
+    #region METHODS
     private void Awake()
     {
         m_cmpMovement = GetComponent<CharMovement>();
         m_cmpAnimator = GetComponent<Animator>();
-        m_charOwner = GetComponent<Char_Base>();
+        m_char = GetComponent<Char_Base>();
     }
 
     private void Update()
@@ -61,11 +69,7 @@ public class CharAttack : MonoBehaviour
         Debug.Log("HIT TARGET " + transform.name);
         if (!IsInAttackRange()) { return; }
 
-        E_HIT_TYPE hitType;
-
-        m_target.TakeDamage(m_charOwner.CalculateDamage(out hitType), hitType);
-
-
+        m_char.DoDamage(m_target);
     }
 
     private bool IsInAttackRange()
@@ -101,4 +105,5 @@ public class CharAttack : MonoBehaviour
         m_isAttacking = false;
         m_cmpAnimator.SetBool("BasicAttack", m_isAttacking);
     }
+    #endregion
 }

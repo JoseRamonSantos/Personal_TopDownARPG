@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    #region VARIABLES
     public static Inventory Instance = null;
 
     public delegate void StatsHandler(int _crntHpPotions);
@@ -26,8 +27,9 @@ public class Inventory : MonoBehaviour
     private List<Item_Base> m_inventory = new List<Item_Base>();
     [SerializeField]
     private List<GameObject> m_displayedItems = new List<GameObject>();
+    #endregion
 
-
+    #region METHODS
     private void Awake()
     {
         Instance = this;
@@ -186,4 +188,5 @@ public class Inventory : MonoBehaviour
 
         return x;
     }
+#endregion
 }

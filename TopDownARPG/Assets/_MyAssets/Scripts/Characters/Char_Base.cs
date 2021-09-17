@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,7 +18,20 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     public delegate SAttackStats AttackStatsHandler();
     public event AttackStatsHandler OnAttackStats;
 
+    protected Canvas m_canvas = null;
+
     protected CharAttack m_cmpAttack = null;
+    [Header("Hp Info")]
+    [SerializeField]
+    protected GameObject m_hpInfoHeal = null;
+    [SerializeField]
+    protected GameObject m_hpInfoBasicHit = null;
+    [SerializeField]
+    protected GameObject m_hpInfoCriticalHit = null;
+    [SerializeField]
+    protected GameObject m_hpInfoMissHit = null;
+
+    [Space]
 
     [SerializeField]
     protected Transform m_hitInfoDisplay = null;
@@ -66,6 +80,24 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     public int ArmorTotal { get => m_armorTotal; set => m_armorTotal = Mathf.Clamp(value, 0, 100); }
 
     public float AttackDistance { get => m_attackDistance; }
+
+    public Canvas Canvas
+    {
+        get
+        {
+            if (m_canvas == null)
+            {
+                m_canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+                if (m_canvas == null)
+                {
+                    Debug.LogError(transform.name + " CANVAS Missing");
+                }
+            }
+
+            return m_canvas;
+        }
+    }
     #endregion
 
 
@@ -92,30 +124,18 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     //DAMAGE
     public virtual void DoDamage(Char_Base _target)
     {
-        E_HIT_TYPE hitType;
+        E_HP_INFO_TYPE hitType;
         int damage = CalculateDamage(out hitType, OnAttackStats.Invoke());
 
         if (_target)
         {
-            _target.TakeDamage(damage, hitType);
+            _target.TakeDamage(this, damage, hitType);
         }
 
         Debug.Log("-->" + transform.name + " deals " + damage + " damage " + "<---");
     }
-    /*public virtual void DoDamage(Char_Base _target, SAttackStats _attackStats)
-    {
-        E_HIT_TYPE hitType;
-        int damage = CalculateDamage(out hitType, _attackStats);
 
-        if (_target)
-        {
-            _target.TakeDamage(damage, hitType);
-        }
-
-        Debug.Log("-->" + transform.name + " deals " + damage + " damage " + "<---");
-    }*/
-
-    public virtual int CalculateDamage(out E_HIT_TYPE _hitType, SAttackStats _attackStats)
+    public virtual int CalculateDamage(out E_HP_INFO_TYPE _hitType, SAttackStats _attackStats)
     {
         int damage = _attackStats.m_damage;
 
@@ -126,7 +146,7 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
         float criticalProb = _attackStats.m_critProb * 0.01f;
 
         float criticalMultiplier = _attackStats.m_critDamageMult;
-        
+
         /*Debug.Log("----------------------CALCULATE DAMAGE---------------------------");
         Debug.Log("-> BASE DAMAGE= " + damage);
         Debug.Log("-> ACC= " + acc + " / rnd= " + rndAcc);
@@ -136,12 +156,12 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
 
         if (rndAcc <= acc)
         {
-            _hitType = E_HIT_TYPE.BASIC;
+            _hitType = E_HP_INFO_TYPE.BASIC_HIT;
 
             if (rndCriticalProb <= criticalProb)
             {
                 Debug.Log(transform.name + " - critical hit ----------");
-                _hitType = E_HIT_TYPE.CRITICAL;
+                _hitType = E_HP_INFO_TYPE.CRITICAL_HIT;
 
                 damage = Mathf.RoundToInt(damage * criticalMultiplier * 0.01f);
             }
@@ -149,7 +169,7 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
         else
         {
             Debug.Log(transform.name + " - miss hit -----");
-            _hitType = E_HIT_TYPE.MISS;
+            _hitType = E_HP_INFO_TYPE.MISS_HIT;
 
             damage = 0;
         }
@@ -163,7 +183,7 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     }
 
     //HP
-    public virtual void TakeDamage(int _damage, E_HIT_TYPE _hitType)
+    public virtual void TakeDamage(Char_Base _owner, int _damage, E_HP_INFO_TYPE _hitType)
     {
         if (m_isInvulnerable) { return; }
 
@@ -182,7 +202,19 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
 
         if (HitInfoDisplay)
         {
-            GameManager.Instance.SpawnHitInfo(HitInfoDisplay.position, damageTaken, _hitType);
+            SpawnHPInfo(HitInfoDisplay.position, damageTaken, _hitType);
+        }
+
+        if (_hitType != E_HP_INFO_TYPE.MISS_HIT)
+        {
+            if (this is Char_Enemy)
+            {
+                ConsoleManager.Instance.AddPlayerCauseDamage(this as Char_Enemy, damageTaken, _damage, damageAbsorved, _hitType);
+            }
+            else if (this is Char_Player)
+            {
+                ConsoleManager.Instance.AddPlayerReceiveDamage(_owner as Char_Enemy, damageTaken, _damage, damageAbsorved, _hitType);
+            }
         }
 
     }
@@ -191,13 +223,69 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     {
         _amount = Mathf.Clamp(_amount, 0, int.MaxValue);
 
-        GameManager.Instance.SpawnHealInfo(transform.position, _amount);
+        //GameManager.Instance.SpawnHealInfo(transform.position, _amount);
+        SpawnHPInfo(transform.position, _amount);
 
         Debug.Log(transform.name + ": " + _amount + " HP restored");
         CrntHp += _amount;
     }
 
     public abstract void Die();
+
+    protected void SpawnHPInfo(Vector3 _pos, int _ammount = 0, E_HP_INFO_TYPE _type = E_HP_INFO_TYPE.HEAL)
+    {
+        GameObject hpInfo = null;
+        float delta = 0;
+
+        switch (_type)
+        {
+            case E_HP_INFO_TYPE.HEAL:
+                hpInfo = m_hpInfoHeal;
+                delta = 10;
+                break;
+
+            case E_HP_INFO_TYPE.BASIC_HIT:
+                delta = 5;
+                hpInfo = m_hpInfoBasicHit;
+                break;
+
+            case E_HP_INFO_TYPE.CRITICAL_HIT:
+                delta = 1;
+                hpInfo = m_hpInfoCriticalHit;
+                break;
+
+            case E_HP_INFO_TYPE.MISS_HIT:
+                delta = 5;
+                hpInfo = m_hpInfoMissHit;
+                break;
+        }
+
+        Debug.Log(transform.name + " 1");
+
+        if (!hpInfo) { return; }
+
+        Vector3 infoPos = Camera.main.WorldToScreenPoint(_pos);
+
+        float rndDelta = Random.Range(-delta, delta);
+
+        infoPos.x += rndDelta;
+        infoPos.z = 0;
+
+        GameObject hitinfo = Instantiate(hpInfo, infoPos, Quaternion.identity, Canvas.transform);
+
+        Debug.Log(transform.name + " 2");
+        Debug.Log(transform.name + " afd dsafg fdsg fd0" + Canvas);
+
+        if (_type == E_HP_INFO_TYPE.MISS_HIT)
+        {
+            hitinfo.GetComponent<TextMeshProUGUI>().text = "miss";
+        }
+        else
+        {
+            hitinfo.GetComponent<TextMeshProUGUI>().text = _ammount.ToString();
+        }
+    }
+
 
     //STATS
     public void AddEquipedItem(Item_Equipable _itm)

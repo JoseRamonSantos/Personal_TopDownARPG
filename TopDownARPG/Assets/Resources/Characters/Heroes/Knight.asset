@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: 
   m_icon: {fileID: 0}
-  m_maxHp: 150
-  m_armor: 20
+  m_maxHp: 50
+  m_armor: 5
   m_attackDistance: 2.5
   m_attackStatsBase:
-    m_damage: 10
+    m_damage: 5
     m_acc: 60
     m_critProb: 20
     m_critDamageMult: 125

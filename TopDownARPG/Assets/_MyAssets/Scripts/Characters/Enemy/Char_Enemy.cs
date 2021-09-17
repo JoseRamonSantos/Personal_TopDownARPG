@@ -56,6 +56,11 @@ public class Char_Enemy : Char_Base
         Destroy(this.gameObject);
     }
 
+    public override void TakeDamage(Char_Base _owner, int _damage, E_HP_INFO_TYPE _hitType)
+    {
+        base.TakeDamage(_owner, _damage, _hitType);
+    }
+
     private void DropLoot()
     {
         if (m_lootData.Count == 0) { return; }

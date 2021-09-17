@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.PauseActivated) { return; }
+
         //CURSOR
         RaycastHit rHit = new RaycastHit();
         NavMeshHit nVHit = new NavMeshHit();
@@ -137,9 +139,10 @@ public class PlayerController : MonoBehaviour
                     //m_cmpMovement.SetNewDestination(rHit.transform.position);
                     ItemData itemData = lootItemTarget.LootData;
 
-                    Debug.Log("Player has taken " + itemData.m_itmName + " item");
-
                     Inventory.Instance.AddItem(lootItemTarget.LootData);
+
+                    Debug.Log("Player has taken " + itemData.m_itmName + " item");
+                    ConsoleManager.Instance.AddLootItem(itemData);
 
                     Destroy(lootItemTarget.gameObject);
                     break;
@@ -156,6 +159,29 @@ public class PlayerController : MonoBehaviour
             Inventory.Instance.QuickUseHpPotion();
         }
 
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (PlayerEquipmentDisplay.Instance)
+            {
+                PlayerEquipmentDisplay.Instance.ToggleInventoryVisibility();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (dInfo != null)
+            {
+                dInfo.EndHover();
+            }
+            CursorManager.Instance.ChangeCursorTexture(E_CURSOR_MODE.DEFAULT);
+            GameManager.Instance.TogglePause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Inventory.Instance.QuickUseHpPotion();
+        }
+
         if (Input.GetMouseButtonDown(2))
         {
             EnableCameraMovement();
@@ -165,19 +191,32 @@ public class PlayerController : MonoBehaviour
             DisenableCameraMovement();
         }
 
+        //DEBUG
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Time.timeScale = 1f;
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            Time.timeScale = 0.5f;
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            Time.timeScale = 0.25f;
+        }
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            Time.timeScale = 0.1f;
+        }
+
         if (Input.GetKeyDown(KeyCode.O))
         {
-            m_cmpPlayer.TakeDamage(15, E_HIT_TYPE.BASIC);
+            m_cmpPlayer.DoDamage(m_cmpPlayer);
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
             m_cmpPlayer.Heal(10);
-        }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            m_cmpPlayer.DoDamage(null);
         }
 
         if (Input.GetKeyDown(KeyCode.L))

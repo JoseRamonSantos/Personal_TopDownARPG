@@ -15,8 +15,8 @@ public class HitTextDisplay : MonoBehaviour
     [SerializeField]
     private float m_fadeVelocity = 2;
 
-
     private TextMeshProUGUI m_text = null;
+
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class HitTextDisplay : MonoBehaviour
             float crntAlfa = m_text.color.a;
             float dAlfa = 0;
 
-            if(crntAlfa == 0)
+            if(crntAlfa <= 0.1f)
             {
                 Destroy(this.gameObject);
             }

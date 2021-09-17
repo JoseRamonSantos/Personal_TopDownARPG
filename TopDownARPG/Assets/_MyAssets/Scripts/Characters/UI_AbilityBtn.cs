@@ -15,6 +15,8 @@ public class UI_AbilityBtn : MonoBehaviour
     private Image m_imgAbilityIcon = null;
     [SerializeField]
     private Image m_imgCooldown = null;
+    [SerializeField]
+    private Image m_imgBorder = null;
 
     [SerializeField]
     private Button m_cmpAbilityBtn = null;
@@ -44,35 +46,41 @@ public class UI_AbilityBtn : MonoBehaviour
         m_imgAbilityIcon = GetComponent<Image>();
         m_imgCooldown = transform.Find("Cooldown").GetComponent<Image>();
         m_imgAbilityIcon.sprite = m_cmpAbility.AbilityIcon;
+
+        m_imgBorder = transform.Find("Border").GetComponent<Image>();
+
+        CmpAbility.OnUpdateCooldown += UpdateCooldown;
+        CmpAbility.OnDeactivateButton += DeactivateButton;
+        CmpAbility.OnActivateButton += ActivateButton;
+
+        ActivateButton();
+        UpdateCooldown(0, 1);
     }
 
     void Update()
     {
-        CooldownUI();
-
         if (Input.GetKeyDown(m_inputKey))
         {
-            m_cmpAbility.Activate();
+            m_cmpAbilityBtn.onClick.Invoke();
         }
     }
 
-    private void CooldownUI()
+    private void ActivateButton()
     {
-        float crntCooldown = m_cmpAbility.CrntCooldown;
-        float maxCooldown = m_cmpAbility.MaxCooldown;
+        m_cmpAbilityBtn.interactable = true;
 
-        float cooldownPercent = crntCooldown / maxCooldown;
+        m_imgBorder.color = Color.grey;
+    }
 
-        m_imgCooldown.fillAmount = cooldownPercent;
+    private void DeactivateButton()
+    {
+        m_cmpAbilityBtn.interactable = false;
+        m_imgBorder.color = Color.black;
+    }
 
-        if(cooldownPercent > 0)
-        {
-            m_cmpAbilityBtn.interactable = false;
-        }
-        else
-        {
-            m_cmpAbilityBtn.interactable = true;
-        }
+    private void UpdateCooldown(float _crntValue, float _maxValue)
+    {
+        m_imgCooldown.fillAmount = _crntValue / _maxValue;
     }
     #endregion
 }

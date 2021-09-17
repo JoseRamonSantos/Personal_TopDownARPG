@@ -66,7 +66,6 @@ public class CharAttack : MonoBehaviour
     //Anim Event
     public void HitTarget()
     {
-        Debug.Log("HIT TARGET " + transform.name);
         if (!IsInAttackRange()) { return; }
 
         m_char.DoDamage(m_target);

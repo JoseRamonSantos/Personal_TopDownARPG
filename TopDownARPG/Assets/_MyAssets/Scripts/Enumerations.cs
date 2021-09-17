@@ -10,4 +10,4 @@ public enum E_ENEMY_TIER        { A, B, C }
 
 public enum E_ENEMY_TYPE        { BASIC, FINAL_BOSS }
 
-public enum E_HIT_TYPE          { BASIC, CRITICAL, MISS }
+public enum E_HP_INFO_TYPE      { HEAL, BASIC_HIT, CRITICAL_HIT, MISS_HIT }

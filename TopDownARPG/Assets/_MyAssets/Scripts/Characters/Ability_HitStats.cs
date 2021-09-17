@@ -8,6 +8,9 @@ public abstract class Ability_HitStats : Ability_Base
     [SerializeField]
     protected int m_numberOfHits = 1;
 
+    [SerializeField]
+    protected SAttackStats m_attackStatsMod;
+
     protected int m_crntHits = 0;
     #endregion
 

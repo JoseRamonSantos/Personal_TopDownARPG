@@ -27,10 +27,6 @@ public class PlayerEquipmentDisplay : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            ToggleInventoryVisibility();
-        }
     }
 
     public void EquipItem(Item_Equipable _itm)

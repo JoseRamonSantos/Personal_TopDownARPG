@@ -61,7 +61,10 @@ public class ConsoleManager : MonoBehaviour
         cMessage.AddText("Damage");
         cMessage.AddText("given", "green", true);
         cMessage.AddText("to");
-        cMessage.AddText(_target.name.ToString(), "red", false, true);
+        if (_target)
+        {
+            cMessage.AddText(_target.name.ToString(), "red", false, true);
+        }
         cMessage.AddText(":");
         cMessage.AddText(_dmgTaken.ToString(), "red", true);
         cMessage.AddText("(" + _totalDmg.ToString() + "-" + _dmgAbsorved.ToString() + ")");
@@ -79,14 +82,27 @@ public class ConsoleManager : MonoBehaviour
         cMessage.AddText("Damage");
         cMessage.AddText("taken", "red", true);
         cMessage.AddText("from");
-        cMessage.AddText(_owner.name.ToString(), "red", false, true);
+        if (_owner)
+        {
+            cMessage.AddText(_owner.name.ToString(), "red", false, true);
+        }
         cMessage.AddText(":");
         cMessage.AddText(_dmgTaken.ToString(), "red", true);
-        cMessage.AddText("(" + _totalDmg.ToString() + "-" + _dmgAbsorved.ToString() + ")"); 
+        cMessage.AddText("(" + _totalDmg.ToString() + "-" + _dmgAbsorved.ToString() + ")");
         if (_hitInfo == E_HP_INFO_TYPE.CRITICAL_HIT)
         {
             cMessage.AddText("CRITICAL HIT", "orange");
         }
+    }
+
+    public void AddPlayerHeal(int _amount)
+    {
+        ConsoleMessage cMessage = NewMessage();
+
+        cMessage.ResetText();
+        cMessage.AddText("Heal:");
+        cMessage.AddText(_amount.ToString(), "green", true);
+        cMessage.AddText("HP");
     }
 
     public void AddLootItem(ItemData _itm)

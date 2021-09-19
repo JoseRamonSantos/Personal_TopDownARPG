@@ -45,12 +45,23 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.PauseActivated) { return; }
-
         //CURSOR
         RaycastHit rHit = new RaycastHit();
         NavMeshHit nVHit = new NavMeshHit();
         IDisplayInfo dInfo = null;
+
+        //PAUSE
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (dInfo != null)
+            {
+                dInfo.EndHover();
+            }
+            CursorManager.Instance.ChangeCursorTexture(E_CURSOR_MODE.DEFAULT);
+            GameManager.Instance.TogglePause();
+        }
+
+        if (GameManager.Instance.PauseActivated) { return; }
 
         Char_Enemy enemyTarget = null;
         Item_Loot lootItemTarget = null;
@@ -167,20 +178,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (dInfo != null)
-            {
-                dInfo.EndHover();
-            }
-            CursorManager.Instance.ChangeCursorTexture(E_CURSOR_MODE.DEFAULT);
-            GameManager.Instance.TogglePause();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Inventory.Instance.QuickUseHpPotion();
-        }
 
         if (Input.GetMouseButtonDown(2))
         {

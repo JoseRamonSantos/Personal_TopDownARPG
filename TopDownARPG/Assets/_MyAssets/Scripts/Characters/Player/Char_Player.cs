@@ -11,6 +11,13 @@ public class Char_Player : Char_Base
 {
     public static Char_Player Instance = null;
 
+    public delegate void CanvasHitFXHandler();
+    public event CanvasHitFXHandler OnReceiveHit;
+    
+    public delegate void CanvasLowHpFXHandler();
+    public event CanvasLowHpFXHandler OnLowHp;
+
+
     private NavMeshAgent m_cmpNVAgent = null;
     [SerializeField]
     protected HeroData m_data = null;
@@ -43,6 +50,12 @@ public class Char_Player : Char_Base
 
     }
 
+    public override void Heal(int _amount)
+    {
+        base.Heal(_amount);
+        ConsoleManager.Instance.AddPlayerHeal(_amount);
+    }
+
     public override void Die()
     {
         /*GetComponent<Animator>().Play("Die", 0, 0);
@@ -56,5 +69,19 @@ public class Char_Player : Char_Base
         WavesManager.Instance?.StopAllCoroutines();
 
         Destroy(this.gameObject);
+    }
+
+    public override void TakeDamage(Char_Base _owner, int _damage, E_HP_INFO_TYPE _hitType)
+    {
+        base.TakeDamage(_owner, _damage, _hitType);
+
+        if(_hitType == E_HP_INFO_TYPE.MISS_HIT) { return; }
+
+        OnReceiveHit?.Invoke();
+
+        if(CrntHp <= MaxHp * 0.2f)
+        {
+            OnLowHp?.Invoke();
+        }
     }
 }

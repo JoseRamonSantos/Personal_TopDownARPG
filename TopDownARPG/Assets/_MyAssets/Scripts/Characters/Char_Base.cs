@@ -223,7 +223,6 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
     {
         _amount = Mathf.Clamp(_amount, 0, int.MaxValue);
 
-        //GameManager.Instance.SpawnHealInfo(transform.position, _amount);
         SpawnHPInfo(transform.position, _amount);
 
         Debug.Log(transform.name + ": " + _amount + " HP restored");
@@ -272,9 +271,6 @@ public abstract class Char_Base : MonoBehaviour, IDisplayInfo
         infoPos.z = 0;
 
         GameObject hitinfo = Instantiate(hpInfo, infoPos, Quaternion.identity, Canvas.transform);
-
-        Debug.Log(transform.name + " 2");
-        Debug.Log(transform.name + " afd dsafg fdsg fd0" + Canvas);
 
         if (_type == E_HP_INFO_TYPE.MISS_HIT)
         {

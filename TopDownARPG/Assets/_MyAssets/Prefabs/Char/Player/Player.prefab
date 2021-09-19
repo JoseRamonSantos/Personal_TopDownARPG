@@ -716,7 +716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mouseLM:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 3840
   m_crntMode: 0
   m_lastHover: {fileID: 0}
   m_crntHover: {fileID: 0}

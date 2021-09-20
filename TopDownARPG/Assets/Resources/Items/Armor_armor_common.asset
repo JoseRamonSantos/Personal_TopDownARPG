@@ -16,4 +16,4 @@ MonoBehaviour:
   m_itmIcon: {fileID: 21300000, guid: b0d6e23bf242bbd44bb2a854c49b6377, type: 3}
   m_equipSlot: 1
   m_model: {fileID: 0}
-  m_armor: 2
+  m_armor: 4

@@ -18,7 +18,7 @@ MonoBehaviour:
   m_model: {fileID: 919132149155446097, guid: f6228453d6fc5184da0ac6500e5928c1, type: 3}
   m_statsMod:
     m_damage: 30
-    m_acc: 10
+    m_acc: 15
     m_critProb: 11
     m_critDamageMult: 175
   m_attackDistance: 2.9

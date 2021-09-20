@@ -42,7 +42,7 @@ public class UI_AbilityBtn : MonoBehaviour
         }
 
         m_cmpAbilityBtn = GetComponent<Button>();
-        m_cmpAbilityBtn.onClick.AddListener(m_cmpAbility.Activate);
+        m_cmpAbilityBtn.onClick.AddListener(m_cmpAbility.ActivateInput);
         m_imgAbilityIcon = GetComponent<Image>();
         m_imgCooldown = transform.Find("Cooldown").GetComponent<Image>();
         m_imgAbilityIcon.sprite = m_cmpAbility.AbilityIcon;
@@ -61,7 +61,7 @@ public class UI_AbilityBtn : MonoBehaviour
     {
         if (Input.GetKeyDown(m_inputKey))
         {
-            m_cmpAbilityBtn.onClick.Invoke();
+            m_cmpAbility.ActivateInput();
         }
     }
 

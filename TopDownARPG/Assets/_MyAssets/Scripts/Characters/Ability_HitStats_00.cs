@@ -5,17 +5,14 @@ using UnityEngine;
 public class Ability_HitStats_00 : Ability_HitStats
 {
     #region VARIABLES
-    
+
     #endregion
 
     #region METHODS
-    public override void Activate()
+    /*protected override bool CanBeUsed()
     {
-        //if (m_cmpCharAttack.IsAttacking && m_cmpCharAttack.Target)
-        //{
-            base.Activate();
-        //}
-    }
+        return base.CanBeUsed() && m_cmpCharAttack.IsAttacking && m_cmpCharAttack.Target;
+    }*/
 
     protected override void AbilityEffect()
     {

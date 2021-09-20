@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63df80ae82db0744912c14e1060daaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_initWaitTime: 5
+  m_initWaitTime: 8
   m_crntIWT: 0
   m_nextRoundWaitTime: 5
   m_wavesInfo:

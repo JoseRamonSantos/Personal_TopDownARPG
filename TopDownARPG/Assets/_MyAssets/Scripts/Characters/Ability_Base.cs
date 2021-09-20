@@ -69,7 +69,19 @@ public abstract class Ability_Base : MonoBehaviour
         UpdateCooldown();
     }
 
-    public virtual void Activate()
+    public void ActivateInput()
+    {
+        if (!CanBeUsed()) { return; }
+        
+        Activate();
+    }
+
+    protected virtual bool CanBeUsed()
+    {
+        return !m_cooldownActive;
+    }
+
+    protected virtual void Activate()
     {
         Debug.Log(transform.name + " - ACTIVATE");
         AbilityEffect();
@@ -77,6 +89,7 @@ public abstract class Ability_Base : MonoBehaviour
         StartCooldown();
         DeactivateButton();
     }
+
 
     protected virtual void StartCooldown()
     {

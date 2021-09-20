@@ -26,8 +26,12 @@ public abstract class Ability_TimeEffect : Ability_Base
         UpdateDuration();
     }
 
+    protected override bool CanBeUsed()
+    {
+        return !m_cooldownActive && !m_isActivated;
+    }
 
-    public override void Activate()
+    protected override void Activate()
     {
         AbilityEffect();
         DeactivateButton();

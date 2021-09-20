@@ -10,7 +10,7 @@ public class Ability_TimeEffect_10 : Ability_TimeEffect
 
     protected override void StartAbility()
     {
-        Debug.Log(transform.name + ": Start Ability " + name);
+        Debug.Log(transform.name + ": Start Ability Effect " + name);
 
         float aSpeedM = m_cmpAnimator.GetFloat("AttackSpeed");
         aSpeedM *= m_aSpeedMultiplier;
@@ -20,7 +20,7 @@ public class Ability_TimeEffect_10 : Ability_TimeEffect
 
     protected override void EndAbility()
     {
-        Debug.Log(transform.name + ": End Ability " + name);
+        Debug.Log(transform.name + ": End Ability Effect " + name);
         
         float aSpeedM = m_cmpAnimator.GetFloat("AttackSpeed");
         aSpeedM /= m_aSpeedMultiplier;

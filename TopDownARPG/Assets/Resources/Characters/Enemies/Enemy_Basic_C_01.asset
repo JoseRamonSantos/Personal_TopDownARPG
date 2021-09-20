@@ -26,23 +26,23 @@ MonoBehaviour:
   - m_itemData:
     - {fileID: 11400000, guid: 0115bd55c5d72d44eb966c010bcd8204, type: 2}
     m_unique: 0
-    m_probability: 20
+    m_probability: 40
   - m_itemData:
     - {fileID: 11400000, guid: 2b97d5ea2cbb5fb40b00f1fcb411a910, type: 2}
     - {fileID: 11400000, guid: 2b97d5ea2cbb5fb40b00f1fcb411a910, type: 2}
     m_unique: 0
-    m_probability: 50
+    m_probability: 60
   - m_itemData:
     - {fileID: 11400000, guid: f8b3ff815f9d7f640b41f9091d90c1a5, type: 2}
     - {fileID: 11400000, guid: 9300c15cb9cb9c04989029593d184bdc, type: 2}
     - {fileID: 11400000, guid: ae0b52ba7f8fec4409fd7564dce760a4, type: 2}
     - {fileID: 11400000, guid: 5084ccf7fa0e8944faca8bcf31a5e5aa, type: 2}
     m_unique: 1
-    m_probability: 60
+    m_probability: 90
   - m_itemData:
     - {fileID: 11400000, guid: 2b97d5ea2cbb5fb40b00f1fcb411a910, type: 2}
     m_unique: 0
-    m_probability: 90
+    m_probability: 95
   m_type: 0
   m_tier: 2
   m_enemyPrefab: {fileID: 8363683427563821899, guid: 834d4381608b38644b7a2aafd30f1c9c,

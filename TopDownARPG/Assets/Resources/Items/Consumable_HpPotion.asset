@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itmName: HP Potion
   m_itmIcon: {fileID: 21300000, guid: 8fc3f464e71ef934392fe848eed59977, type: 3}
-  m_healAmount: 20
+  m_healAmount: 30

@@ -79,7 +79,8 @@ public class Char_Player : Char_Base
 
         OnReceiveHit?.Invoke();
 
-        if(CrntHp <= MaxHp * 0.2f)
+        //if(CrntHp <= MaxHp * 0.4f)
+        if(CrntHp <= _damage * 2.5f)
         {
             OnLowHp?.Invoke();
         }

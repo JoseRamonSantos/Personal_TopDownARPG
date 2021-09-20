@@ -25,26 +25,6 @@ public class CursorManager : MonoBehaviour
         ChangeCursorTexture(E_CURSOR_MODE.DEFAULT);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ChangeCursorTexture(E_CURSOR_MODE.DEFAULT);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeCursorTexture(E_CURSOR_MODE.MOVE);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeCursorTexture(E_CURSOR_MODE.GET_ITEM);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ChangeCursorTexture(E_CURSOR_MODE.ATTACK);
-        }
-    }
-
     public void ChangeCursorTexture(E_CURSOR_MODE _newMode)
     {
         switch (_newMode)

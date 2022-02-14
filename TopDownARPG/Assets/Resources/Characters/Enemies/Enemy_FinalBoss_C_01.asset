@@ -34,7 +34,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 77d8fab336c29b84fa870e88013179d6, type: 2}
     - {fileID: 11400000, guid: 3804b1fe8f302014ea38d7ae1db63b0c, type: 2}
     - {fileID: 11400000, guid: 6a92f2eaff407d44795541a7c6874859, type: 2}
-    - {fileID: 11400000, guid: 831facfbe05fa5c4188a924ecd224f05, type: 2}
     m_unique: 1
     m_probability: 90
   - m_itemData:

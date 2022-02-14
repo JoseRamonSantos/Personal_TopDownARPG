@@ -63,6 +63,9 @@ public class Inventory : MonoBehaviour
             newItem = new Item_Weapon((ItemWeaponData)_data);
         }
 
+        Debug.Log("//////" + newItem);
+        Debug.Log("//////" + newItem.ItmName);
+
         if (newItem != null)
         {
             AddItem(newItem);
